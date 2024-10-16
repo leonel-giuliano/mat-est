@@ -9,13 +9,6 @@
 
 typedef flag8_t opFlags_t;
 
-#define has_average flags.flag0
-#define has_mean flags.flag1
-#define has_median flags.flag2
-#define has_mode flags.flag3
-#define has_save flags.flag4
-#define is_quantitative flags.flag5
-
 #define FAVG 0x01
 #define FMEAN 0x02
 #define FMEDIAN 0x04

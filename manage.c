@@ -27,27 +27,27 @@ errorEvent_t manage(int argc, char **argv, opFlags_t *opFlags) {
                 break;
 
             case 'a':
-                opFlags->has_average = 1;
+                opFlags->data |= FAVG;
                 break;
 
             case 'm':
-                opFlags->has_mean = 1;
+                opFlags->data |= FMEAN;
                 break;
 
             case 'M':
-                opFlags->has_median = 1;
+                opFlags->data |= FMEDIAN;
                 break;
 
             case 'r':
-                opFlags->has_mode = 1;
+                opFlags->data |= FMODE;
                 break;
 
             case 'q':
-                opFlags->is_quantitative = 1;
+                opFlags->data |= FQNTV;
                 break;
 
             case 'Q':
-                opFlags->is_quantitative = 0;
+                opFlags->data &= ~FQNTV;
                 break;
 
             case '?': return errorHandler(ERROR_GETOPT);
