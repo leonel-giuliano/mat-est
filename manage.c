@@ -23,7 +23,7 @@ errorEvent_t manage(int argc, char **argv, opFlags_t *opFlags) {
     while((c = getopt_long(argc, argv, "AamMrs:", options, &opIx)) != -1) {
         switch (c) {
             case 'A':
-                opFlags->data |= (FAVG | FMEAN | FMEDIAN | FMODE);
+                opFlags->data |= FALL;
                 break;
 
             case 'a':

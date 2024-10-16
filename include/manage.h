@@ -23,6 +23,8 @@ typedef flag8_t opFlags_t;
 #define FSAVE 0x10
 #define FQNTV 0x20
 
+#define FALL (FAVG | FMEAN | FMEDIAN | FMODE)
+
 
 // Read every argument and check the option flags
 // Can return ERROR_GETOPT
