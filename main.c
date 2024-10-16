@@ -8,7 +8,7 @@ errorEvent_t errorHandler(errorEvent_t e) {
 
     switch (e) {
         case ERROR_GETOPT:
-            fprintf(stderr, "problem reading the options.\n");
+            fprintf(stderr, "an unkown option was used.\n");
             break;
     }
 

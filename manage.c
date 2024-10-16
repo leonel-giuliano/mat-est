@@ -2,9 +2,10 @@
 #include <getopt.h>
 
 #include "main.h"
+#include "manage.h"
 
 
-errorEvent_t manage(int argc, char **argv) {
+errorEvent_t manage(int argc, char **argv, opFlags_t *opFlags) {
     const struct option options[] = {
         { "all", no_argument, 0, 'A' },
         { "average", no_argument, 0, 'a' },
@@ -19,6 +20,26 @@ errorEvent_t manage(int argc, char **argv) {
 
     while((c = getopt_long(argc, argv, "AamMrs:", options, &opIx)) != -1) {
         switch (c) {
+            case 'A':
+                opFlags->data |= (FAVG | FMEAN | FMEDIAN | FMODE);
+                break;
+
+            case 'a':
+                opFlags->has_average = 1;
+                break;
+
+            case 'm':
+                opFlags->has_mean = 1;
+                break;
+
+            case 'M':
+                opFlags->has_median = 1;
+                break;
+
+            case 'r':
+                opFlags->has_mode = 1;
+                break;
+
             case '?': return errorHandler(ERROR_GETOPT);
         }
     }
