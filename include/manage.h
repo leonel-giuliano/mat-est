@@ -14,12 +14,14 @@ typedef flag8_t opFlags_t;
 #define has_median flags.flag2
 #define has_mode flags.flag3
 #define has_save flags.flag4
+#define is_quantitative flags.flag5
 
 #define FAVG 0x01
 #define FMEAN 0x02
 #define FMEDIAN 0x04
 #define FMODE 0x08
 #define FSAVE 0x10
+#define FQNTV 0x20
 
 
 // Read every argument and check the option flags

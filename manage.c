@@ -12,7 +12,9 @@ errorEvent_t manage(int argc, char **argv, opFlags_t *opFlags) {
         { "mean", no_argument, 0, 'm' },
         { "median", no_argument, 0, 'M' },
         { "mode", no_argument, 0, 'r' },
-        { "save", required_argument, 0, 's' }
+        { "save", required_argument, 0, 's' },
+        { "quantitative", no_argument, 0, 'q' },
+        { "qualitative", no_argument, 0, 'Q' }
     };
 
     char c;
@@ -38,6 +40,14 @@ errorEvent_t manage(int argc, char **argv, opFlags_t *opFlags) {
 
             case 'r':
                 opFlags->has_mode = 1;
+                break;
+
+            case 'q':
+                opFlags->is_quantitative = 1;
+                break;
+
+            case 'Q':
+                opFlags->is_quantitative = 0;
                 break;
 
             case '?': return errorHandler(ERROR_GETOPT);
