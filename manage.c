@@ -50,7 +50,7 @@ errorEvent_t manage(int argc, char **argv, opFlags_t *opFlags) {
                 opFlags->data &= ~FQNTV;
                 break;
 
-            case '?': return errorHandler(ERROR_GETOPT);
+            case '?': return ERROR_GETOPT;
         }
     }
 
